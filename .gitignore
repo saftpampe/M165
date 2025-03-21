@@ -1,18 +1,18 @@
 HELP.md
-HockeyApp_BE/HockeyApp/.gradle
+HockeyApp_BE/.gradle
 build/
-!HockeyApp_BE/HockeyApp/gradle/wrapper/gradle-wrapper.jar
+!HockeyApp_BE/gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
 
 ### STS ###
-HockeyApp_BE/HockeyApp/.apt_generated
-HockeyApp_BE/HockeyApp/.classpath
-HockeyApp_BE/HockeyApp/.factorypath
-HockeyApp_BE/HockeyApp/.project
-HockeyApp_BE/HockeyApp/.settings
-HockeyApp_BE/HockeyApp/.springBeans
-HockeyApp_BE/HockeyApp/.sts4-cache
+HockeyApp_BE/.apt_generated
+HockeyApp_BE/.classpath
+HockeyApp_BE/.factorypath
+HockeyApp_BE/.project
+HockeyApp_BE/.settings
+HockeyApp_BE/.springBeans
+HockeyApp_BE/.sts4-cache
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
@@ -27,11 +27,11 @@ out/
 !**/src/test/**/out/
 
 ### NetBeans ###
-HockeyApp_BE/HockeyApp/nbproject/private/
-HockeyApp_BE/HockeyApp/nbbuild/
-HockeyApp_BE/HockeyApp/dist/
-HockeyApp_BE/HockeyApp/nbdist/
-HockeyApp_BE/HockeyApp/.nb-gradle/
+HockeyApp_BE/nbproject/private/
+HockeyApp_BE/nbbuild/
+HockeyApp_BE/dist/
+HockeyApp_BE/nbdist/
+HockeyApp_BE/.nb-gradle/
 
 ### VS Code ###
 .vscode/
