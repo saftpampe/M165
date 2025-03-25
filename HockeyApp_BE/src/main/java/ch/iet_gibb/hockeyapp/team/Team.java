@@ -1,4 +1,4 @@
-package com.example.hockeyapp.models;
+package ch.iet_gibb.hockeyapp.team;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,9 +10,9 @@ public class Team {
     @Id
     private String id;
     private String name;
-    private int gruendungsjahr;
+    private Integer gruendungsjahr;
     private List<String> erfolge;
-    private int punkte;
+    private Integer punkte;
     private String arena_id;
 
     public String getId() {
@@ -31,11 +31,11 @@ public class Team {
         this.name = name;
     }
 
-    public int getGruendungsjahr() {
+    public Integer getGruendungsjahr() {
         return gruendungsjahr;
     }
 
-    public void setGruendungsjahr(int gruendungsjahr) {
+    public void setGruendungsjahr(Integer gruendungsjahr) {
         this.gruendungsjahr = gruendungsjahr;
     }
 
@@ -47,11 +47,11 @@ public class Team {
         this.erfolge = erfolge;
     }
 
-    public int getPunkte() {
+    public Integer getPunkte() {
         return punkte;
     }
 
-    public void setPunkte(int punkte) {
+    public void setPunkte(Integer punkte) {
         this.punkte = punkte;
     }
 

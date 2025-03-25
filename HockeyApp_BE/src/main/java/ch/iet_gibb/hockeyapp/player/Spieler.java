@@ -1,4 +1,4 @@
-package com.example.hockeyapp.models;
+package ch.iet_gibb.hockeyapp.player;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,10 +13,10 @@ public class Spieler {
     private String geburtsdatum;
     private String nationalitaet;
     private String unterVertragBis;
-    private int saves;
+    private Integer saves;
     private double savePercent;
-    private int nummer;
-    private int marktwert;
+    private Integer nummer;
+    private Integer marktwert;
     private String team_id;  // Referenz zum Team
 
     // Getters und Setters
@@ -76,11 +76,11 @@ public class Spieler {
         this.unterVertragBis = unterVertragBis;
     }
 
-    public int getSaves() {
+    public Integer getSaves() {
         return saves;
     }
 
-    public void setSaves(int saves) {
+    public void setSaves(Integer saves) {
         this.saves = saves;
     }
 
@@ -92,19 +92,19 @@ public class Spieler {
         this.savePercent = savePercent;
     }
 
-    public int getNummer() {
+    public Integer getNummer() {
         return nummer;
     }
 
-    public void setNummer(int nummer) {
+    public void setNummer(Integer nummer) {
         this.nummer = nummer;
     }
 
-    public int getMarktwert() {
+    public Integer getMarktwert() {
         return marktwert;
     }
 
-    public void setMarktwert(int marktwert) {
+    public void setMarktwert(Integer marktwert) {
         this.marktwert = marktwert;
     }
 

@@ -1,13 +1,16 @@
-package com.example.hockeyapp.models;
+package ch.iet_gibb.hockeyapp.arena;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "arena")
 public class Arena {
     @Id
     private String id;
     private String name;
-    private int kapazitaet;
+    private Integer kapazitaet;
     private String ort;
-    private int baujahr;
+    private Integer baujahr;
 
     public String getId() {
         return id;
@@ -17,11 +20,11 @@ public class Arena {
         this.id = id;
     }
 
-    public int getBaujahr() {
+    public Integer getBaujahr() {
         return baujahr;
     }
 
-    public void setBaujahr(int baujahr) {
+    public void setBaujahr(Integer baujahr) {
         this.baujahr = baujahr;
     }
 
@@ -33,11 +36,11 @@ public class Arena {
         this.ort = ort;
     }
 
-    public int getKapazitaet() {
+    public Integer getKapazitaet() {
         return kapazitaet;
     }
 
-    public void setKapazitaet(int kapazitaet) {
+    public void setKapazitaet(Integer kapazitaet) {
         this.kapazitaet = kapazitaet;
     }
 

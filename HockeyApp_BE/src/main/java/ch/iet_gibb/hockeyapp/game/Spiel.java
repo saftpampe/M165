@@ -1,4 +1,4 @@
-package com.example.hockeyapp.models;
+package ch.iet_gibb.hockeyapp.game;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,8 +11,8 @@ public class Spiel {
     private String austragungsort;  // Referenz zur Arena
     private String team1_id;  // Referenz zum ersten Team
     private String team2_id;  // Referenz zum zweiten Team
-    private int toreTeam1;
-    private int toreTeam2;
+    private Integer toreTeam1;
+    private Integer toreTeam2;
 
     // Getters und Setters
     public String getId() {
@@ -55,19 +55,19 @@ public class Spiel {
         this.team2_id = team2_id;
     }
 
-    public int getToreTeam1() {
+    public Integer getToreTeam1() {
         return toreTeam1;
     }
 
-    public void setToreTeam1(int toreTeam1) {
+    public void setToreTeam1(Integer toreTeam1) {
         this.toreTeam1 = toreTeam1;
     }
 
-    public int getToreTeam2() {
+    public Integer getToreTeam2() {
         return toreTeam2;
     }
 
-    public void setToreTeam2(int toreTeam2) {
+    public void setToreTeam2(Integer toreTeam2) {
         this.toreTeam2 = toreTeam2;
     }
 }
