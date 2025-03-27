@@ -1,5 +1,7 @@
 package ch.iet_gibb.hockeyapp.player;
 
+import ch.iet_gibb.hockeyapp.team.Team;
+
 import java.util.Objects;
 
 public class SpielerRequestDTO {
@@ -13,7 +15,7 @@ public class SpielerRequestDTO {
     private double savePercent;
     private Integer nummer;
     private Integer marktwert;
-    private String team_id;
+    private String team_id;  // Referenz zum Team
 
     public String getVorname() {
         return vorname;
@@ -95,12 +97,12 @@ public class SpielerRequestDTO {
         this.marktwert = marktwert;
     }
 
-    public String getTeam_id() {
+    public String getTeam() {
         return team_id;
     }
 
-    public void setTeam_id(String team_id) {
-        this.team_id = team_id;
+    public void setTeam(String team) {
+        this.team_id = team;
     }
 
     @Override

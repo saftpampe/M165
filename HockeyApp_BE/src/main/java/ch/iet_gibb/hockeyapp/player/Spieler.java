@@ -1,6 +1,8 @@
 package ch.iet_gibb.hockeyapp.player;
 
+import ch.iet_gibb.hockeyapp.team.Team;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "spieler")
@@ -17,7 +19,7 @@ public class Spieler {
     private double savePercent;
     private Integer nummer;
     private Integer marktwert;
-    private String team_id;  // Referenz zum Team
+    private String teamId;  // Referenz zum Team
 
     // Getters und Setters
     public String getId() {
@@ -108,11 +110,11 @@ public class Spieler {
         this.marktwert = marktwert;
     }
 
-    public String getTeam_id() {
-        return team_id;
+    public String getTeam() {
+        return teamId;
     }
 
-    public void setTeam_id(String team_id) {
-        this.team_id = team_id;
+    public void setTeam(String team) {
+        this.teamId = team;
     }
 }

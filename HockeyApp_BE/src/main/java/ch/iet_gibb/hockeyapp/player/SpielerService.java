@@ -1,7 +1,3 @@
-package ch.iet_gibb.hockeyapp.player;
-
-public class SpielerService {
-
 
 package ch.iet_gibb.hockeyapp.player;
 
@@ -31,6 +27,8 @@ public class SpielerService {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Spieler not found")));
     }
 
+
+
     public void deleteById(String id) {
         spielerRepository.deleteById(id);
     }
@@ -49,8 +47,8 @@ public class SpielerService {
         return SpielerMapper.toDTO(spielerRepository.save(existing));
     }
 
-    public List<SpielerResponseDTO> findByTeamId(String teamId) {
-        return spielerRepository.findByTeamId(teamId).stream().map(SpielerMapper::toDTO).toList();
+    public List<SpielerResponseDTO> findByTeamId(String team_Id) {
+        return spielerRepository.findByTeamId(team_Id).stream().map(SpielerMapper::toDTO).toList();
     }
 
     private void mergeSpieler(Spieler existing, Spieler changing) {
@@ -84,9 +82,9 @@ public class SpielerService {
         if (changing.getMarktwert() != null) {
             existing.setMarktwert(changing.getMarktwert());
         }
-        if (StringUtils.isNotBlank(changing.getTeam_id())) {
-            existing.setTeam_id(changing.getTeam_id());
+        if (changing.getTeam() != null) {
+            existing.setTeam(changing.getTeam());
         }
     }
 }
-}
+

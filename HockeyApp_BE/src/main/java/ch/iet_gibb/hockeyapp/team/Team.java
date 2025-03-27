@@ -13,7 +13,7 @@ public class Team {
     private Integer gruendungsjahr;
     private List<String> erfolge;
     private Integer punkte;
-    private String arena_id;
+    private String arenaId;
 
     public String getId() {
         return id;
@@ -55,11 +55,11 @@ public class Team {
         this.punkte = punkte;
     }
 
-    public String getArena_id() {
-        return arena_id;
+    public String getArenaId() {
+        return arenaId;
     }
 
-    public void setArena_id(String arena_id) {
-        this.arena_id = arena_id;
+    public void setArenaId(String arenaId) {
+        this.arenaId = arenaId;
     }
 }

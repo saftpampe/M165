@@ -1,8 +1,7 @@
-package ch.iet_gibb.hockeyapp.player;
-
-public class SpielerMapper {
 
 package ch.iet_gibb.hockeyapp.player;
+
+import org.bson.types.ObjectId;
 
 public class SpielerMapper {
 
@@ -19,7 +18,7 @@ public class SpielerMapper {
         dto.setSavePercent(spieler.getSavePercent());
         dto.setNummer(spieler.getNummer());
         dto.setMarktwert(spieler.getMarktwert());
-        dto.setTeamId(spieler.getTeam_id());
+        dto.setTeam(spieler.getTeam());
         return dto;
     }
 
@@ -35,9 +34,10 @@ public class SpielerMapper {
         spieler.setSavePercent(dto.getSavePercent());
         spieler.setNummer(dto.getNummer());
         spieler.setMarktwert(dto.getMarktwert());
-        spieler.setTeam_id(dto.getTeamId());
+        spieler.setTeam(String.valueOf(new ObjectId(dto.getTeam()))); // Convert String to ObjectId
+
         return spieler;
     }
 }
 
-}
+

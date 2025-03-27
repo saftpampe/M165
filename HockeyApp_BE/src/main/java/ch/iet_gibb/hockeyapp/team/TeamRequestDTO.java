@@ -8,7 +8,7 @@ public class TeamRequestDTO {
     private Integer gruendungsjahr;
     private List<String> erfolge;
     private Integer punkte;
-    private String arena_id;
+    private String arenaId;
 
     public String getName() {
         return name;
@@ -42,23 +42,23 @@ public class TeamRequestDTO {
         this.punkte = punkte;
     }
 
-    public String getArena_id() {
-        return arena_id;
+    public String getArenaId() {
+        return arenaId;
     }
 
-    public void setArena_id(String arena_id) {
-        this.arena_id = arena_id;
+    public void setArenaId(String arenaId) {
+        this.arenaId = arenaId;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         TeamRequestDTO that = (TeamRequestDTO) o;
-        return Objects.equals(name, that.name) && Objects.equals(gruendungsjahr, that.gruendungsjahr) && Objects.equals(erfolge, that.erfolge) && Objects.equals(punkte, that.punkte) && Objects.equals(arena_id, that.arena_id);
+        return Objects.equals(name, that.name) && Objects.equals(gruendungsjahr, that.gruendungsjahr) && Objects.equals(erfolge, that.erfolge) && Objects.equals(punkte, that.punkte) && Objects.equals(arenaId, that.arenaId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, gruendungsjahr, erfolge, punkte, arena_id);
+        return Objects.hash(name, gruendungsjahr, erfolge, punkte, arenaId);
     }
 }
