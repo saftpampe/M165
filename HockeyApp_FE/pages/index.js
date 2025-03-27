@@ -8,12 +8,12 @@ export default function IndexPage() {
     useEffect(() => {
         // Hole die Daten vom Backend
         axios.get("http://localhost:8080/api/spieler")
-            .then(response => setSpieler(response.data)) // Speichern der Spieler in state
+            .then(response => setSpieler(response.data)) // Speichern der Spieler im state
             .catch(error => {
                 console.error("Fehler beim Laden der Spieler:", error);
                 alert("Fehler beim Laden der Spieler-Daten.");
             });
-    }, []);
+    }, []); // Leeres Array bedeutet, dass dieser Effekt nur einmal beim Laden ausgeführt wird
 
     const handleAuswahl = (event) => {
         const spielerId = event.target.value;
@@ -40,7 +40,7 @@ export default function IndexPage() {
                     <p>Geburtsdatum: {ausgewaehlterSpieler.geburtsdatum}</p>
                     <p>Nationalität: {ausgewaehlterSpieler.nationalitaet}</p>
                     <p>Nummer: {ausgewaehlterSpieler.nummer}</p>
-                    <p>Marktwert: {ausgewaehlterSpieler.marktwert} CHF</p>
+                    <p>Marktwert: {ausgewaehlterSpieler.marktwert} €</p>
                 </div>
             )}
         </div>
