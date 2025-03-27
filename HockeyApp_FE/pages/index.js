@@ -40,7 +40,7 @@ export default function IndexPage() {
                     <p>Geburtsdatum: {ausgewaehlterSpieler.geburtsdatum}</p>
                     <p>Nationalität: {ausgewaehlterSpieler.nationalitaet}</p>
                     <p>Nummer: {ausgewaehlterSpieler.nummer}</p>
-                    <p>Marktwert: {ausgewaehlterSpieler.marktwert} €</p>
+                    <p>Marktwert: {ausgewaehlterSpieler.marktwert} CHF</p>
                 </div>
             )}
         </div>
