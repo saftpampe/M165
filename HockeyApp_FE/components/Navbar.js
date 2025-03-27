@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
     return (
-        <nav className="p-4 bg-blue-600 text-white">
-            <ul className="flex space-x-4">
+        <nav className="navbar">
+            <ul>
                 <li>
-                    <Link to="/" className="hover:underline">Startseite</Link>
+                    <Link to="/" className="nav-link">Startseite</Link>
                 </li>
                 <li>
-                    <Link to="/team" className="hover:underline">Teams</Link>
+                    <Link to="/team" className="nav-link">Teams</Link>
                 </li>
             </ul>
         </nav>

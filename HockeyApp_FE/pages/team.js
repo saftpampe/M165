@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function Team() {
+export default function TeamPage() {
     const [teams, setTeams] = useState([]);
     const [ausgewaehltesTeam, setAusgewaehltesTeam] = useState(null);
 
@@ -22,10 +22,10 @@ export default function Team() {
     };
 
     return (
-        <div className="p-4">
-            <h1 className="text-xl font-bold mb-4">Team Auswahl</h1>
+        <div className="container">
+            <h1 className="title">Team Auswahl</h1>
             {/* Dropdown-Menü für Team-Auswahl */}
-            <select onChange={handleAuswahl} className="border p-2 rounded">
+            <select onChange={handleAuswahl} className="select-box">
                 <option value="">Team wählen...</option>
                 {teams.map(t => (
                     <option key={t.id} value={t.id}>{t.name}</option>
@@ -34,8 +34,8 @@ export default function Team() {
 
             {/* Anzeige der Details des ausgewählten Teams */}
             {ausgewaehltesTeam && (
-                <div className="mt-4 border p-4 rounded">
-                    <h2 className="text-lg font-semibold">{ausgewaehltesTeam.name}</h2>
+                <div className="team-details">
+                    <h2>{ausgewaehltesTeam.name}</h2>
                     <p>Gründungsjahr: {ausgewaehltesTeam.gruendungsjahr}</p>
                     <p>Erfolge:</p>
                     <ul>

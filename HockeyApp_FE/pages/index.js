@@ -22,10 +22,10 @@ export default function IndexPage() {
     };
 
     return (
-        <div className="p-4">
-            <h1 className="text-xl font-bold mb-4">Spieler Auswahl</h1>
+        <div className="container">
+            <h1 className="title">Spieler Auswahl</h1>
             {/* Dropdown-Menü für Spieler-Auswahl */}
-            <select onChange={handleAuswahl} className="border p-2 rounded">
+            <select onChange={handleAuswahl} className="select-box">
                 <option value="">Spieler wählen...</option>
                 {spieler.map(s => (
                     <option key={s.id} value={s.id}>{s.vorname} {s.nachname}</option>
@@ -34,8 +34,8 @@ export default function IndexPage() {
 
             {/* Anzeige der Details des ausgewählten Spielers */}
             {ausgewaehlterSpieler && (
-                <div className="mt-4 border p-4 rounded">
-                    <h2 className="text-lg font-semibold">{ausgewaehlterSpieler.vorname} {ausgewaehlterSpieler.nachname}</h2>
+                <div className="player-details">
+                    <h2>{ausgewaehlterSpieler.vorname} {ausgewaehlterSpieler.nachname}</h2>
                     <p>Position: {ausgewaehlterSpieler.position}</p>
                     <p>Geburtsdatum: {ausgewaehlterSpieler.geburtsdatum}</p>
                     <p>Nationalität: {ausgewaehlterSpieler.nationalitaet}</p>
