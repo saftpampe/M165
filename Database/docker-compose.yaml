@@ -9,45 +9,49 @@ services:
     volumes:
       - mongo_primary_data:/data/db
       - ./init-scripts:/docker-entrypoint-initdb.d
-      - ./mongo-keyfile:/etc/mongo-keyfile
+      - ./mongo-keyfile:/etc/mongo-keyfile:ro
     networks:
       - mongo_network
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-    command: mongod --replSet rs0 --auth --keyFile /etc/mongo-keyfile
+    command: mongod --auth --keyFile /etc/mongo-keyfile --bind_ip_all
 
   mongo_secondary1:
-    image: mongo
+    image: mongo:latest
     container_name: mongo_secondary1
     restart: always
     volumes:
       - mongo_secondary1_data:/data/db
+      - ./mongo-keyfile:/etc/mongo-keyfile:ro
     networks:
       - mongo_network
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-    command: mongod --replSet rs0 --auth --keyFile /etc/mongo-keyfile
+    command: mongod --replSet rs0 --auth --keyFile /etc/mongo-keyfile --bind_ip_all
 
   mongo_secondary2:
-    image: mongo
+    image: mongo:latest
     container_name: mongo_secondary2
     restart: always
     volumes:
       - mongo_secondary2_data:/data/db
+      - ./mongo-keyfile:/etc/mongo-keyfile:ro
     networks:
       - mongo_network
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-    command: mongod --replSet rs0 --auth --keyFile /etc/mongo-keyfile
+    command: mongod --replSet rs0 --auth --keyFile /etc/mongo-keyfile --bind_ip_all
 
   mongo_setup:
-    image: mongo
+    image: mongo:latest
     container_name: mongo_setup
     depends_on:
       - mongo_primary
+      - mongo_secondary1
+      - mongo_secondary2
     networks:
       - mongo_network
     volumes:

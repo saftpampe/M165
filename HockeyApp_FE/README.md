@@ -1,4 +1,4 @@
 ### Node Installieren & ausführen
 
-- npm installieren: `npm install react react-dom next`
-- Frontend starten: `npm run dev`
+- npm installieren: `npm install` 
+- Frontend starten: `npm start`

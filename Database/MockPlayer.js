@@ -2572,25 +2572,4 @@ db.spieler.insertMany([
         "team_id": {
             "$oid": "605c72ef4ed5f7437c6b9b0f"
         }
-    },
-    {
-        "vorname": "Benjamin",
-        "nachname": "Conz",
-        "position": "Torhüter",
-        "geburtsdatum": "1991-09-13",
-        "Nationalität": "Schweiz",
-        "unterVertragBis": "2025-04-25",
-        "saves": 100,
-        "save%": 92,
-        "nummer": 1,
-        "marktwert": 60000,
-        "team_id": {
-            "$oid": "605c72ef4ed5f7437c6b9b0f"
-        }
-    },
-    {
-        "vorname": "Benjamin",
-        "nachname": "Conz",
-        "position": "Torhüter",
-        "geburtsdatum": "1991-09-13",
-        "Nationalität": "Sc,
+    }])
