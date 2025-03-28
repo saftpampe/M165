@@ -1,0 +1,64 @@
+version: '3.8'
+services:
+  mongo_primary:
+    image: mongo:latest
+    container_name: mongo_primary
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_primary_data:/data/db
+      - ./init-scripts:/docker-entrypoint-initdb.d
+      - ./mongo-keyfile:/etc/mongo-keyfile
+    networks:
+      - mongo_network
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    command: mongod --replSet rs0 --auth --keyFile /etc/mongo-keyfile
+
+  mongo_secondary1:
+    image: mongo
+    container_name: mongo_secondary1
+    restart: always
+    volumes:
+      - mongo_secondary1_data:/data/db
+    networks:
+      - mongo_network
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    command: mongod --replSet rs0 --auth --keyFile /etc/mongo-keyfile
+
+  mongo_secondary2:
+    image: mongo
+    container_name: mongo_secondary2
+    restart: always
+    volumes:
+      - mongo_secondary2_data:/data/db
+    networks:
+      - mongo_network
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    command: mongod --replSet rs0 --auth --keyFile /etc/mongo-keyfile
+
+  mongo_setup:
+    image: mongo
+    container_name: mongo_setup
+    depends_on:
+      - mongo_primary
+    networks:
+      - mongo_network
+    volumes:
+      - ./rs-init.sh:/rs-init.sh
+    entrypoint: ["/bin/bash", "/rs-init.sh"]
+
+networks:
+  mongo_network:
+    driver: bridge
+
+volumes:
+  mongo_primary_data:
+  mongo_secondary1_data:
+  mongo_secondary2_data:
