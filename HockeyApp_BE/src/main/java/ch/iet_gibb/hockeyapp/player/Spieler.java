@@ -15,8 +15,7 @@ public class Spieler {
     private String geburtsdatum;
     private String nationalitaet;
     private String unterVertragBis;
-    private Integer saves;
-    private double savePercent;
+
     private Integer nummer;
     private Integer marktwert;
     private String teamId;  // Referenz zum Team
@@ -78,22 +77,6 @@ public class Spieler {
         this.unterVertragBis = unterVertragBis;
     }
 
-    public Integer getSaves() {
-        return saves;
-    }
-
-    public void setSaves(Integer saves) {
-        this.saves = saves;
-    }
-
-    public double getSavePercent() {
-        return savePercent;
-    }
-
-    public void setSavePercent(double savePercent) {
-        this.savePercent = savePercent;
-    }
-
     public Integer getNummer() {
         return nummer;
     }
@@ -110,11 +93,11 @@ public class Spieler {
         this.marktwert = marktwert;
     }
 
-    public String getTeam() {
+    public String getTeamID() {
         return teamId;
     }
 
-    public void setTeam(String team) {
+    public void setTeamId(String team) {
         this.teamId = team;
     }
 }

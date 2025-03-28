@@ -34,7 +34,7 @@ public class SpielerController {
         return ResponseEntity.ok(spielerService.findAll());
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     @Operation(summary = "Get player by id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Player found",
@@ -56,7 +56,7 @@ public class SpielerController {
             @ApiResponse(responseCode = "404", description = "No players found for this team", content = @Content)})
     public ResponseEntity<?> findByTeam(@Valid @RequestBody SpielerRequestDTO spielerRequestDTO) {
         try {
-            return ResponseEntity.ok(spielerService.findByTeamId(spielerRequestDTO.getTeam()));
+            return ResponseEntity.ok(spielerService.findByTeamId(spielerRequestDTO.getTeamId()));
         } catch (ResponseStatusException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No players found for this team");
         }
@@ -72,23 +72,19 @@ public class SpielerController {
         return ResponseEntity.status(HttpStatus.CREATED).body(spielerService.insert(spielerRequestDTO));
     }
 
-    @PutMapping("{id}")
+    @PatchMapping("/{id}")
     @Operation(summary = "Update an existing player")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Player updated successfully",
                     content = @Content(schema = @Schema(implementation = SpielerResponseDTO.class))),
             @ApiResponse(responseCode = "400", description = "Invalid input", content = @Content),
             @ApiResponse(responseCode = "404", description = "Player not found", content = @Content)})
-    public ResponseEntity<?> update(@Parameter(description = "Id of the player to update") @PathVariable String id,
-                                    @Valid @RequestBody SpielerRequestDTO spielerRequestDTO) {
-        try {
+    public ResponseEntity<?> update(@Parameter(description = "Id of the player to update") @PathVariable String id, @RequestBody SpielerRequestDTO spielerRequestDTO) {
             return ResponseEntity.ok(spielerService.update(spielerRequestDTO, id));
-        } catch (ResponseStatusException e) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Player not found");
-        }
+
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     @Operation(summary = "Delete an existing player")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Player deleted successfully", content = @Content),
